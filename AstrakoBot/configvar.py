@@ -1,7 +1,23 @@
 # Create a new config.py or rename this to config.py file in same dir and import, then extend this class.
 import json
 import os
+from AstrakoBot.sample_config import Config 
+class Development(Config): 
+    OWNER_ID = "902525829" # your telegram ID 
+    OWNER_USERNAME = "TheeDon93" 
+    # your telegram username 
+    API_KEY = "1445580967:AAEJE_Aj9xRih3HKN1Kom5ag4-RCuO2-VIk" 
+    # your api key, as provided by the @botfather 
+    SQLALCHEMY_DATABASE_URI = 'postgres://arzqzhqwlyiuyf:8ddc700b99ae4831102b913a50010b8a0bd02a3b50e72deaf326bd96faf89ee9@ec2-54-247-158-179.eu-west-1.compute.amazonaws.com:5432/d22j3b0q337urk"  # needed for any database modules
 
+
+    # sample db credentials 
+    JOIN_LOGGER = '-1234567890' 
+    # some group chat that your bot is a member of USE_JOIN_LOGGER = True 
+    DRAGONS = [183980, 834895] 
+    # List of id's for users which have sudo access to the bot. 
+    LOAD = [] 
+    NO_LOAD = []
 
 def get_user_list(config, key):
     with open("{}/AstrakoBot/{}".format(os.getcwd(), config), "r") as json_file:
